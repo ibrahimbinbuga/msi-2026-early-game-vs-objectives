@@ -31,7 +31,6 @@ Repo'nun `data/`, `figures/`, `reports/` ve `.venv` olmadan bir kopyası alınd�
 | 8 | Attribution (CC BY 4.0) | ✅ README "Data" bölümü ve dashboard altbilgisi |
 
 ## Bilinen açık noktalar
-- Proje henüz git reposu değil (`git init` yapılmadı).
 - `figures/dashboard.png` Playwright + sistem Chrome'u ile çekildi; temiz ortam testinde yeniden çekilmedi (dashboard AppTest ile test edildi).
 - Pantheon'un `pick_rate` değeri (12.7) games_played/71 (11.3) ile tutmuyor; analize etkisi yok, olduğu gibi bırakıldı.
 - Python 3.15 dışında test edilmedi.

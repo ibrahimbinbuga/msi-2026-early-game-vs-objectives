@@ -1,6 +1,6 @@
 # DEVLOG: MSI 2026 — Early Game vs Objective Control
 
-Durum: Tamamlandı (Adım 1–10). Açık: git init.
+Durum: Tamamlandı (Adım 1–10). Public repo: https://github.com/ibrahimbinbuga/msi-2026-early-game-vs-objectives
 Başlangıç: 2026-11-03
 
 ## Karar ve varsayımlar
