@@ -1,0 +1,19 @@
+# Data (Kaggle, CC BY 4.0) — download locally, never commit
+data/
+*.db
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Streamlit
+.streamlit/secrets.toml
