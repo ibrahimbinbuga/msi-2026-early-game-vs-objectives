@@ -85,6 +85,11 @@ Başlangıç: 2026-11-03
 - Sorun: Streamlit `use_container_width` uyarısı → `width="stretch"`.
 - Süre: ~30 dk
 
+### 2026-11-03 | Eksik tamamlama
+- Yapılan: README "Reproduce" bloğuna Kaggle indirme komutu ve API token notu eklendi (önceden blok tek başına çalıştırılınca veri yok hatası verirdi). Notebook'a B6 (yedek sorular, Spearman + kararlılık) eklendi; 02 grafiğinde "First to 3 towers" satırına "timing not in data" notu eklendi. Notebook yeniden çalıştı, 0 hata.
+- Bulunan: Şampiyon ρ eşiğe duyarlı (0.25–0.45); varsayılan 5 maç eşiği en yüksek değeri veriyor, README'de belirtildi.
+- Süre: ~15 dk
+
 ## Veri kalite notları
 - Satır/sütun: teams 11×30, players 55×29, champions 104×21. Başlıklar Data_Dictionary.md ile birebir ve aynı sırada.
 - Eksik değerler: teams 3 hücre (elder_dragon_rate: DCG, TSW, TES). players 0. champions 48 hücre = 3 şampiyon (Kennen, Rek'Sai, Malphite) × 16 sütun; bu satırlarda kills/deaths/assists = 0, pick/ban oranları dahil diğer her şey NaN.
@@ -104,7 +109,7 @@ Başlangıç: 2026-11-03
 
 Ana soruya cevap: Ne "erken oyun" ne "obje kontrolü" blok halinde öne çıkıyor (grup ort. ρ 0.62 vs 0.37, ama tek metrikler sürüklüyor). Kazanan takımları ayıran, maç ortasına kadar kurulan **kalıcı üstünlük** (altın@15, ilk 3 kule, Baron); tek seferlik "ilk" olaylar değil. Oyun süresi bu ilişkilere karışmıyor (|ρ| ≤ 0.29).
 
-Yedek soru 1 (dashboard'dan): ≥5 maçlı 63 şampiyonda pick_ban_rate ~ winrate ρ = 0.45. Yedek soru 2 (SQL Q5): >%50 takımlarda her rolde gold_diff_10 daha yüksek; fark en büyük ADC'de (396.6), en küçük Mid'de (73.3).
+Yedek soru 1 (notebook B6): ≥5 maçlı 63 şampiyonda pick_ban_rate ~ winrate ρ = 0.45; eşik 3/5/8/10 maç için 0.27/0.45/0.41/0.25, yani eşiğe duyarlı ve 5 en yüksek değeri veriyor. Yedek soru 2 (notebook B6): rol bazında gold_diff_10 ~ takım winrate ρ: ADC 0.88 (tek takım çıkarınca 0.84–0.95), Top 0.57, Jungle 0.38, Mid 0.14, Support 0.00. SQL Q5 grup farkıyla tutarlı (en büyük fark ADC'de, 396.6).
 
 ## Ürün çıkarımı
 Bir takım/maç analitiği ürünü (yayın grafiği, scouting paneli) "takım formu" göstergesi olarak tek seferlik "ilk" istatistiklerini (ilk kan, ilk ejder) öne çıkarmamalı; belirli bir dakikadaki altın farkı gibi kalıcı üstünlük metrikleri bu veride kazananlarla çok daha tutarlı birlikte hareket ediyor. (Betimsel, 11 takım; A/B ya da maç bazında doğrulanmadı.)

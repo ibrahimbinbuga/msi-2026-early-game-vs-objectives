@@ -16,6 +16,10 @@ Also:
 - "First to three towers" has the strongest link (ρ = 0.95). The data has no timestamp for it, so it is reported as early-to-mid game rather than as early-game evidence.
 - Average game length does not move with win rate or with any of the eight metrics (largest |ρ| = 0.29).
 
+## Backup questions
+- **Champions:** among the 63 champions with at least 5 games, pick+ban rate and win rate have Spearman ρ = 0.45. The result depends on the threshold: ρ ranges from 0.25 to 0.45 for minimum 3, 5, 8 and 10 games, and 5 games happens to give the highest value. Read it as a weak-to-moderate link.
+- **Roles:** the ADC's gold difference at 10 minutes moves most with team win rate: ρ = 0.88, and 0.84 to 0.95 when one team is removed. Top lane follows at 0.57, and Support is the lowest at 0.00. Each role has only 11 players.
+
 ## Limitations
 - **Only 11 teams.** Correlations are descriptive and can shift when a single team is removed; leave-one-out ranges are reported for every metric.
 - **Strength-of-schedule bias.** Win rate and games played rank teams almost identically (ρ = 0.96): teams eliminated early played fewer games against different opponents.
@@ -64,9 +68,10 @@ It reads from SQLite, not CSV.
 - **Dashboard:** Streamlit (`app/dashboard.py`).
 
 ## Reproduce
-Tested with Python 3.15.
+Tested with Python 3.15. Downloading needs a Kaggle API token (`~/.kaggle/kaggle.json`, or `kaggle auth login`); alternatively, download the zip from the Kaggle page and unzip it into `data/`.
 ```
 pip install -r requirements.txt
+kaggle datasets download -d stuker/league-of-legends-msi-2026 -p data/ --unzip
 python src/validate.py && python src/clean.py && python src/load_db.py
 python src/run_queries.py
 jupyter nbconvert --to notebook --execute --inplace notebooks/analysis.ipynb
