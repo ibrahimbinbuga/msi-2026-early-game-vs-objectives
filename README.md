@@ -75,3 +75,7 @@ streamlit run app/dashboard.py
 
 ## Structure
 `data/` (ignored) | `src/` | `sql/` | `notebooks/` | `app/` | `figures/` | `reports/`
+
+## License
+- **Code** (`src/`, `sql/`, `app/`, `notebooks/`): MIT, see [`LICENSE`](LICENSE).
+- **Data**: not included. The MSI 2026 dataset by Eduardo Stückrath is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Figures and reports in this repo are derived from it and carry the same attribution.
